@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Pollination Communications" description="About Pollination Communications">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About Pollination"
+				tagline="About Chelsea"
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Chelsea Kellogg at work"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Chelsea Kellogg has been a communicator for over 15 years. She began her career as a journalist and creative writer. After managing a literary magazine and working at a small alternative weekly newspaper in Seattle, she moved into public relations. Chelsea built a foundation in technology PR working on Microsoft consumer brands and ultimately helped launch Windows 10. 
+					</p>
+					<p>
+						In 2016, Chelsea was called to use her skills helping local government tackle urgent issues. In her time working for the Seattle Mayor she directed marketing campaigns, trained spokespeople, built and managed rapid response teams, launched City initiatives totaling over $1B and managed high profile public-private sector rollouts. As a member of the executive team, she was a trusted leader on braiding policy objectives with communications strategy. 
+					</p>
+					<p>
+						Using her experience developing executive communications and supporting C-suite level officials, Chelsea is skilled at leveraging compelling messengers to advance business objectives. From landing interviews on MSNBC, CNN and NPR to cultivating relationships with niche beat reporters, she has been a media savvy liaison for numerous principals. 
+					</p>
+					<p>
+						Since founding Pollination Communications, Chelsea has advised executives on communication strategy, created political communications on the local impact of Federal legislation, stood up crisis communications strategies, and developed communications strategies. 
+					</p>
+					<p>
+						Chelsea lives with her husband and kids on Bainbridge Island. In her spare time she writes fiction, develops her cooking skills and explores the natural wonders of the Olympic peninsula.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>Executive communications</p>
+					<p>Media relations</p>
+					<p>Strategic communications</p>
+					<p>Speechwriting</p>
+					<p>Personal brand development</p>
+					<p>Messaging discipline</p>
+					<p>Spokesperson coaching</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content p {
+		margin-bottom: 1rem;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
