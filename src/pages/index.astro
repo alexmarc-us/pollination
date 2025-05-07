@@ -46,7 +46,7 @@ const projects = (await getCollection('work'))
 					alt="Chelsea Kellogg smiling"
 					width="480"
 					height="620"
-					src="/assets/pretty.jpg"
+					src=`${import.meta.env.BASE_URL}/assets/pretty.jpg`
 				/>
 			</header>
 
@@ -122,7 +122,7 @@ const projects = (await getCollection('work'))
 		top: 0;
 		transform: translateY(-75%) translateX(-50%);
 		background:
-			url('/assets/backgrounds/noise.png') top center/220px repeat,
+			url('/pollination/assets/backgrounds/noise.png') top center/220px repeat,
 			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
 			var(--gray-999);
 		background-blend-mode: overlay, normal, normal, normal;
