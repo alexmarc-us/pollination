@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "pollination",
+=======
+  "name": "",
+>>>>>>> 689674d (Minimal start)
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,6 +13,10 @@
     "astro": "astro"
   },
   "dependencies": {
+<<<<<<< HEAD
     "astro": "^5.7.10"
+=======
+    "astro": "^5.7.13"
+>>>>>>> 689674d (Minimal start)
   }
 }

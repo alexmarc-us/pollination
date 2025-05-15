@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 import { getCollection } from 'astro:content';
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
@@ -202,3 +203,199 @@ const projects = (await getCollection('work'))
 		}
 	}
 </style>
+=======
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Pollination Communications</title>
+		<style>
+			/* General Reset */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+				line-height: 1.6;
+				color: #2e3b4e; /* Dark gray-blue */
+				background-color: #f4f7f6; /* Light gray-green */
+				padding: 20px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			header {
+				width: 100%;
+				background-color: #ffffff; /* White */
+				padding: 10px 20px;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 1000;
+			}
+
+			nav {
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+			}
+
+			nav a {
+				color: #3a7ca5; /* Muted blue */
+				text-decoration: none;
+				font-weight: bold;
+			}
+
+			nav a:hover {
+				text-decoration: underline;
+			}
+
+			main {
+				max-width: 800px;
+				width: 100%;
+				background: #ffffff; /* White */
+				padding: 20px;
+				border-radius: 8px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				margin-top: 80px; /* To account for the fixed header */
+			}
+
+			h1, h2, h3 {
+				color: #1b4d3e; /* Deep green */
+				margin-bottom: 10px;
+			}
+
+			h1 {
+				text-align: center;
+				margin-bottom: 20px;
+			}
+
+			p {
+				margin-bottom: 15px;
+			}
+
+			ul {
+				list-style-type: disc;
+				padding-left: 20px;
+				margin-bottom: 20px;
+			}
+
+			a {
+				color: #3a7ca5; /* Muted blue */
+				text-decoration: none;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			section {
+				margin-bottom: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="#intro">Messaging</a>
+				<a href="#about">About</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</header>
+		<main>
+			<h1 id="intro">Pollination Communications</h1>
+			<section>
+				<h2>Get your message out there.</h2>
+				<p>
+					At Pollination Communications, we believe that good messaging can be
+					just as powerful as an excellent product, idea, or service. We
+					specialize in communications that cross over between the public and
+					private sectors. With experience in communicating on behalf of large
+					government agencies, multi-stakeholder coalitions, and
+					purpose-driven organizations, Pollination Communications provides
+					the know-how, experience, and tools to make an impact.
+				</p>
+				<p>
+					Over a decade of experience in executive communications gives
+					Chelsea insight into speechwriting, personal brand development,
+					messaging discipline, spokesperson coaching, and more.
+				</p>
+			</section>
+
+			<section id="about">
+				<h2>About</h2>
+				<h3>About Chelsea</h3>
+				<p>
+					Chelsea Kellogg has been a communicator for over 15 years. She began
+					her career as a journalist and creative writer. After managing a
+					literary magazine and working at a small alternative weekly
+					newspaper in Seattle, she moved into public relations. Chelsea built
+					a foundation in technology PR working on Microsoft consumer brands
+					and ultimately helped launch Windows 10.
+				</p>
+				<p>
+					In 2016, Chelsea was called to use her skills helping local
+					government tackle urgent issues. In her time working for the Seattle
+					Mayor she directed marketing campaigns, trained spokespeople, built
+					and managed rapid response teams, launched City initiatives totaling
+					over $1B and managed high profile public-private sector rollouts. As
+					a member of the executive team, she was a trusted leader on braiding
+					policy objectives with communications strategy.
+				</p>
+				<p>
+					Using her experience developing executive communications and
+					supporting C-suite level officials, Chelsea is skilled at leveraging
+					compelling messengers to advance business objectives. From landing
+					interviews on MSNBC, CNN and NPR to cultivating relationships with
+					niche beat reporters, she has been a media savvy liaison for
+					numerous principals.
+				</p>
+				<p>
+					Since founding Pollination Communications, Chelsea has advised
+					executives on communication strategy, created political
+					communications on the local impact of Federal legislation, stood up
+					crisis communications strategies, and developed communications
+					strategies.
+				</p>
+				<p>
+					Chelsea lives with her husband and kids on Bainbridge Island. In her
+					spare time she writes fiction, develops her cooking skills and
+					explores the natural wonders of the Olympic peninsula.
+				</p>
+			</section>
+
+			<section>
+				<h3>A Sample of Past Clients</h3>
+				<ul>
+					<li>King County Department of Natural Resources</li>
+					<li>Yakima Basin Integrated Plan</li>
+					<li>Alexandria Real Estate</li>
+					<li>American Rivers</li>
+					<li>City of Seattle</li>
+					<li>Sustainable Lands Strategy</li>
+					<li>Tacoma Housing Authority</li>
+					<li>Washington Green Hydrogen Alliance</li>
+					<li>Woodland Park Zoo</li>
+				</ul>
+			</section>
+
+			<section id="contact">
+				<h2>Contact</h2>
+				<p>
+					Email: <a href="mailto:chelsea@chelseakellogg.com">chelsea@chelseakellogg.com</a>.
+				</p>
+			</section>
+		</main>
+	</body>
+</html>
+>>>>>>> 689674d (Minimal start)
