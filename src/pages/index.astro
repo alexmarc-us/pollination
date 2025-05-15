@@ -1,204 +1,191 @@
----
-import { getCollection } from 'astro:content';
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Pollination Communications</title>
+		<style>
+			/* General Reset */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
 
-// Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
-import BaseLayout from '../layouts/BaseLayout.astro';
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+				line-height: 1.6;
+				color: #2e3b4e; /* Dark gray-blue */
+				background-color: #f4f7f6; /* Light gray-green */
+				padding: 20px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
 
-// Component Imports
-import CallToAction from '../components/CallToAction.astro';
-import Grid from '../components/Grid.astro';
-import Hero from '../components/Hero.astro';
-import Icon from '../components/Icon.astro';
-import Pill from '../components/Pill.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
+			header {
+				width: 100%;
+				background-color: #ffffff; /* White */
+				padding: 10px 20px;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 1000;
+			}
 
-// Page section components
-import ContactCTA from '../components/ContactCTA.astro';
-import Skills from '../components/Skills.astro';
+			nav {
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+			}
 
-// Content Fetching: List four most recent work projects
-const projects = (await getCollection('work'))
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-	.slice(0, 4);
+			nav a {
+				color: #3a7ca5; /* Muted blue */
+				text-decoration: none;
+				font-weight: bold;
+			}
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
----
+			nav a:hover {
+				text-decoration: underline;
+			}
 
-<BaseLayout>
-	<div class="stack gap-20">
-		<div class="wrapper stack gap-8 lg:gap-20">
-			<header class="hero">
-				<Hero
-					title="Pollination Communications"
-					tagline="Get your message out there."
-					align="start"
-				>
-					<p class="intro">
-						At Pollination Communications we believe that good messaging can be just as powerful as an excellent product, idea or service. We specialize in communications that crosses over between the public and private sectors. With experience in communicating on behalf of large government agencies, multi-stakeholder coalitions, and purpose-driven organizations, Pollination Communications provides the know-how, experience and tools to make an impact. 
-					</p>
-					<p class="intro">
-						Over a decade of experience in executive communications gives Chelsea insight into speechwriting, personal brand development, messaging discipline, spokesperson coaching and more. 
-					</p>
-				</Hero>
+			main {
+				max-width: 800px;
+				width: 100%;
+				background: #ffffff; /* White */
+				padding: 20px;
+				border-radius: 8px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				margin-top: 80px; /* To account for the fixed header */
+			}
 
-				<img
-					alt="Chelsea Kellogg smiling"
-					width="480"
-					height="620"
-					src=`${import.meta.env.BASE_URL}/assets/pretty.jpg`
-				/>
-			</header>
+			h1, h2, h3 {
+				color: #1b4d3e; /* Deep green */
+				margin-bottom: 10px;
+			}
 
-			<Skills />
-		</div>
+			h1 {
+				text-align: center;
+				margin-bottom: 20px;
+			}
 
-		<ContactCTA />
-	</div>
-</BaseLayout>
+			p {
+				margin-bottom: 15px;
+			}
 
-<style>
-	.hero {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
-	}
+			ul {
+				list-style-type: disc;
+				padding-left: 20px;
+				margin-bottom: 20px;
+			}
 
-	.intro {
-		font-size: var(--text-sm);
-	}
+			a {
+				color: #3a7ca5; /* Muted blue */
+				text-decoration: none;
+			}
 
-	.hero img {
-		aspect-ratio: 5 / 4;
-		object-fit: cover;
-		object-position: top;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
+			a:hover {
+				text-decoration: underline;
+			}
 
-	@media (min-width: 50em) {
-		.hero {
-			display: grid;
-			grid-template-columns: 6fr 4fr;
-			padding-inline: 2.5rem;
-			gap: 3.75rem;
-		}
+			section {
+				margin-bottom: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="#intro">Messaging</a>
+				<a href="#about">About</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</header>
+		<main>
+			<h1 id="intro">Pollination Communications</h1>
+			<section>
+				<h2>Get your message out there.</h2>
+				<p>
+					At Pollination Communications, we believe that good messaging can be
+					just as powerful as an excellent product, idea, or service. We
+					specialize in communications that cross over between the public and
+					private sectors. With experience in communicating on behalf of large
+					government agencies, multi-stakeholder coalitions, and
+					purpose-driven organizations, Pollination Communications provides
+					the know-how, experience, and tools to make an impact.
+				</p>
+				<p>
+					Over a decade of experience in executive communications gives
+					Chelsea insight into speechwriting, personal brand development,
+					messaging discipline, spokesperson coaching, and more.
+				</p>
+			</section>
 
-		.intro {
-			margin-top: 0.5rem;
-			display: flex;
-			gap: 0.5rem;
-			font-size: var(--text-md);
-		}
+			<section id="about">
+				<h2>About</h2>
+				<h3>About Chelsea</h3>
+				<p>
+					Chelsea Kellogg has been a communicator for over 15 years. She began
+					her career as a journalist and creative writer. After managing a
+					literary magazine and working at a small alternative weekly
+					newspaper in Seattle, she moved into public relations. Chelsea built
+					a foundation in technology PR working on Microsoft consumer brands
+					and ultimately helped launch Windows 10.
+				</p>
+				<p>
+					In 2016, Chelsea was called to use her skills helping local
+					government tackle urgent issues. In her time working for the Seattle
+					Mayor she directed marketing campaigns, trained spokespeople, built
+					and managed rapid response teams, launched City initiatives totaling
+					over $1B and managed high profile public-private sector rollouts. As
+					a member of the executive team, she was a trusted leader on braiding
+					policy objectives with communications strategy.
+				</p>
+				<p>
+					Using her experience developing executive communications and
+					supporting C-suite level officials, Chelsea is skilled at leveraging
+					compelling messengers to advance business objectives. From landing
+					interviews on MSNBC, CNN and NPR to cultivating relationships with
+					niche beat reporters, she has been a media savvy liaison for
+					numerous principals.
+				</p>
+				<p>
+					Since founding Pollination Communications, Chelsea has advised
+					executives on communication strategy, created political
+					communications on the local impact of Federal legislation, stood up
+					crisis communications strategies, and developed communications
+					strategies.
+				</p>
+				<p>
+					Chelsea lives with her husband and kids on Bainbridge Island. In her
+					spare time she writes fiction, develops her cooking skills and
+					explores the natural wonders of the Olympic peninsula.
+				</p>
+			</section>
 
-		.hero img {
-			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
-			object-fit: cover;
-		}
-	}
+			<section>
+				<h3>A Sample of Past Clients</h3>
+				<ul>
+					<li>King County Department of Natural Resources</li>
+					<li>Yakima Basin Integrated Plan</li>
+					<li>Alexandria Real Estate</li>
+					<li>American Rivers</li>
+					<li>City of Seattle</li>
+					<li>Sustainable Lands Strategy</li>
+					<li>Tacoma Housing Authority</li>
+					<li>Washington Green Hydrogen Alliance</li>
+					<li>Woodland Park Zoo</li>
+				</ul>
+			</section>
 
-	/* ====================================================== */
-
-	.section {
-		display: grid;
-		gap: 2rem;
-	}
-
-	.with-background {
-		position: relative;
-	}
-
-	.with-background::before {
-		--hero-bg: var(--bg-image-subtle-2);
-
-		content: '';
-		position: absolute;
-		pointer-events: none;
-		left: 50%;
-		width: 100vw;
-		aspect-ratio: calc(2.25 / var(--bg-scale));
-		top: 0;
-		transform: translateY(-75%) translateX(-50%);
-		background:
-			url('/pollination/assets/backgrounds/noise.png') top center/220px repeat,
-			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
-			var(--gray-999);
-		background-blend-mode: overlay, normal, normal, normal;
-		mix-blend-mode: var(--bg-blend-mode);
-		z-index: -1;
-	}
-
-	.with-background.bg-variant::before {
-		--hero-bg: var(--bg-image-subtle-1);
-	}
-
-	.section-header {
-		justify-self: center;
-		text-align: center;
-		max-width: 50ch;
-		font-size: var(--text-md);
-		color: var(--gray-300);
-	}
-
-	.section-header h3 {
-		font-size: var(--text-2xl);
-	}
-
-	@media (min-width: 50em) {
-		.section {
-			grid-template-columns: repeat(4, 1fr);
-			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
-			gap: 5rem;
-		}
-
-		.section.with-cta {
-			grid-template-areas: 'header header header cta' 'gallery gallery gallery gallery';
-		}
-
-		.section-header {
-			grid-area: header;
-			font-size: var(--text-lg);
-		}
-
-		.section-header h3 {
-			font-size: var(--text-4xl);
-		}
-
-		.with-cta .section-header {
-			justify-self: flex-start;
-			text-align: left;
-		}
-
-		.gallery {
-			grid-area: gallery;
-		}
-
-		.cta {
-			grid-area: cta;
-		}
-	}
-
-	/* ====================================================== */
-
-	.mention-card {
-		display: flex;
-		height: 7rem;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		border: 1px solid var(--gray-800);
-		border-radius: 1.5rem;
-		color: var(--gray-300);
-		background: var(--gradient-subtle);
-		box-shadow: var(--shadow-sm);
-	}
-
-	@media (min-width: 50em) {
-		.mention-card {
-			border-radius: 1.5rem;
-			height: 9.5rem;
-		}
-	}
-</style>
+			<section id="contact">
+				<h2>Contact</h2>
+				<p>
+					Email: <a href="mailto:chelsea@chelseakellogg.com">chelsea@chelseakellogg.com</a>.
+				</p>
+			</section>
+		</main>
+	</body>
+</html>
